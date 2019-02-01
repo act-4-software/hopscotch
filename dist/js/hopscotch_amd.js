@@ -14,7 +14,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-define('hopscotch', function () { 'use strict';
+define(function () { 'use strict';
 
   var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
     return typeof obj;
@@ -30,7 +30,6 @@ define('hopscotch', function () { 'use strict';
   var HopscotchI18N;
   var customI18N;
   var customRenderer;
-  var customEscape;
   var templateToUse = 'bubble_default';
   var Sizzle = window.Sizzle || null;
   var utils;
@@ -1835,6 +1834,9 @@ define('hopscotch', function () { 'use strict';
      *
      */
     this.startTour = function (tour, stepNum) {
+
+      console.log('act4.hopscotch.startTour()...', tour);
+
       var bubble,
           currStepNum,
           skippedSteps = {},
@@ -2396,9 +2398,6 @@ define('hopscotch', function () { 'use strict';
      * @returns {Object} The Hopscotch object (for chaining).
      */
     this.setEscaper = function (esc) {
-      if (typeof esc === 'function') {
-        customEscape = esc;
-      }
       return this;
     };
 
@@ -2442,60 +2441,60 @@ function print() { __p += __j.call(arguments, '') }
     return str;
   }
 ;
-__p += '\n';
+__p += '\r\n';
 
 var i18n = data.i18n;
 var buttons = data.buttons;
 var step = data.step;
 var tour = data.tour;
 ;
-__p += '\n<div class="hopscotch-bubble-container" style="width: ' +
+__p += '\r\n<div class="hopscotch-bubble-container" style="width: ' +
 ((__t = ( step.width )) == null ? '' : __t) +
 'px; padding: ' +
 ((__t = ( step.padding )) == null ? '' : __t) +
-'px;">\n  ';
+'px;">\r\n  ';
  if(tour.isTour){ ;
 __p += '<span class="hopscotch-bubble-number">' +
 ((__t = ( i18n.stepNum )) == null ? '' : __t) +
 '</span>';
  } ;
-__p += '\n  <div class="hopscotch-bubble-content">\n    ';
+__p += '\r\n  <div class="hopscotch-bubble-content">\r\n    ';
  if(step.title !== ''){ ;
 __p += '<h3 class="hopscotch-title">' +
 ((__t = ( optEscape(step.title, tour.unsafe) )) == null ? '' : __t) +
 '</h3>';
  } ;
-__p += '\n    ';
+__p += '\r\n    ';
  if(step.content  !== ''){ ;
 __p += '<div class="hopscotch-content">' +
 ((__t = ( optEscape(step.content, tour.unsafe) )) == null ? '' : __t) +
 '</div>';
  } ;
-__p += '\n  </div>\n  <div class="hopscotch-actions">\n    ';
+__p += '\r\n  </div>\r\n  <div class="hopscotch-actions">\r\n    ';
  if(buttons.showPrev){ ;
 __p += '<button class="hopscotch-nav-button prev hopscotch-prev">' +
 ((__t = ( i18n.prevBtn )) == null ? '' : __t) +
 '</button>';
  } ;
-__p += '\n    ';
+__p += '\r\n    ';
  if(buttons.showCTA){ ;
 __p += '<button class="hopscotch-nav-button next hopscotch-cta">' +
 ((__t = ( buttons.ctaLabel )) == null ? '' : __t) +
 '</button>';
  } ;
-__p += '\n    ';
+__p += '\r\n    ';
  if(buttons.showNext){ ;
 __p += '<button class="hopscotch-nav-button next hopscotch-next">' +
 ((__t = ( i18n.nextBtn )) == null ? '' : __t) +
 '</button>';
  } ;
-__p += '\n  </div>\n  ';
+__p += '\r\n  </div>\r\n  ';
  if(buttons.showClose){ ;
 __p += '<button class="hopscotch-bubble-close hopscotch-close">' +
 ((__t = ( i18n.closeTooltip )) == null ? '' : __t) +
 '</button>';
  } ;
-__p += '\n</div>\n<div class="hopscotch-bubble-arrow-container hopscotch-arrow">\n  <div class="hopscotch-bubble-arrow-border"></div>\n  <div class="hopscotch-bubble-arrow"></div>\n</div>\n';
+__p += '\r\n</div>\r\n<div class="hopscotch-bubble-arrow-container hopscotch-arrow">\r\n  <div class="hopscotch-bubble-arrow-border"></div>\r\n  <div class="hopscotch-bubble-arrow"></div>\r\n</div>\r\n';
 return __p
 };
   }).call(winHopscotch);

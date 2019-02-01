@@ -1831,6 +1831,9 @@ Hopscotch = function(initOptions) {
    *
    */
   this.startTour = function(tour, stepNum) {
+
+    console.log('act4.hopscotch.startTour()...', tour);
+    
     var bubble,
         currStepNum,
         skippedSteps = {},

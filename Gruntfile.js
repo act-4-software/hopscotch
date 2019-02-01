@@ -284,7 +284,9 @@ module.exports = function(grunt) {
         dest: 'tmp/js/hopscotch_amd_tmp.js',
         options: {
           format: 'amd',
-          moduleId: HOPSCOTCH
+          amd: {
+            id: HOPSCOTCH
+          }
         },
         src: 'src/js/hopscotch.js'
       },
@@ -292,11 +294,12 @@ module.exports = function(grunt) {
         dest: 'tmp/js/hopscotch_umd_tmp.js',
         options: {
           format: 'umd',
-          moduleName: HOPSCOTCH
+          name: HOPSCOTCH
         },
         src: 'src/js/hopscotch.js'
       },
       options: {
+        interop: false,
         plugins: [
           babel({
             exclude: 'node_modules/**'
